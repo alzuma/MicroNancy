@@ -9,7 +9,7 @@ namespace GateWay.app
         {
             base.ApplicationStartup(container, pipelines);
 
-            Conventions.ViewLocationConventions.Add((viewName, model, context) =>
+            Conventions.ViewLocationConventions.Insert(0, (viewName, model, context) =>
             {
                 return string.Concat("pub/", viewName);
             });
