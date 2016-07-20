@@ -1,9 +1,6 @@
-﻿using Owin;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GateWay.server.authentication.components;
+using Owin;
+using Owin.StatelessAuth;
 
 namespace GateWay.app
 {
@@ -11,6 +8,18 @@ namespace GateWay.app
     {
         public void Configuration(IAppBuilder app)
         {
+            var config = new AppConfig();
+
+            app.RequiresStatelessAuth(new TokenValidator(config.SecretKey),
+                new StatelessAuthOptions
+                {
+                    IgnorePaths = new[]
+                    {
+                        "/",
+                        "/login"
+                    }
+                });
+
             app.UseNancy();
         }
     }
