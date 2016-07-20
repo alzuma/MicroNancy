@@ -10,7 +10,7 @@ namespace GateWay.app
         {
             var config = new AppConfig();
 
-            app.RequiresStatelessAuth(new TokenValidator(config.SecretKey),
+            app.RequiresStatelessAuth(new TokenValidator(config),
                 new StatelessAuthOptions
                 {
                     IgnorePaths = new[]

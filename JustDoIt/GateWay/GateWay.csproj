@@ -98,6 +98,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="server\authentication\components\TokenValidator.cs" />
+    <Compile Include="server\authentication\modules\LoginModule.cs" />
     <Compile Include="server\IndexModule.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -114,7 +115,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="server\authentication\interfaces\" />
-    <Folder Include="server\authentication\modules\" />
     <Folder Include="server\authentication\services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

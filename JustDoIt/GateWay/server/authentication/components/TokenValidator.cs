@@ -5,16 +5,17 @@ using System.Text;
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using GateWay.app.interfaces;
 
 namespace GateWay.server.authentication.components
 {
     public class TokenValidator : ITokenValidator
     {
-        private readonly string _secretKey;
+        private readonly IAppConfig _appConfig;
 
-        public TokenValidator(string secretKey)
+        public TokenValidator(IAppConfig appConfig)
         {
-            _secretKey = secretKey;
+            _appConfig = appConfig;
         }
 
         private TokenValidationParameters TokenValidationParameters()
@@ -23,13 +24,13 @@ namespace GateWay.server.authentication.components
             var validAudiences = new List<string>();
             var issuerSigningKeys = new List<SymmetricSecurityKey>();
 
-            issuerSigningKeys.Add(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_secretKey)));
+            issuerSigningKeys.Add(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_appConfig.SecretKey)));
             validAudiences.Add("GateWay Inc");
 
             validationParameters.ValidAudiences = validAudiences;
             validationParameters.IssuerSigningKeys = issuerSigningKeys;
             validationParameters.AuthenticationType = "JWT";
-            validationParameters.ValidIssuer = "GateWay";
+            validationParameters.ValidIssuer = _appConfig.TokenIssuer;
 
             return validationParameters;
         }
