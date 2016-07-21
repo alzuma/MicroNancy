@@ -1,4 +1,5 @@
 ﻿using GateWay.server.authentication.components;
+using GateWay.server.authentication.interfaces;
 using Nancy;
 using Nancy.Bootstrapper;
 using Nancy.Owin;
@@ -7,7 +8,7 @@ using System.Security.Claims;
 
 namespace GateWay.app
 {
-    public class Bootstrapper : Nancy.DefaultNancyBootstrapper
+    public class Bootstrapper : DefaultNancyBootstrapper
     {
         protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
         {
@@ -17,6 +18,9 @@ namespace GateWay.app
             {
                 return string.Concat("pub/", viewName);
             });
+
+            var service = container.Resolve<IAuthentificationService>();
+            service.AddAdminUser();
         }
 
         protected override void RequestStartup(TinyIoCContainer container, IPipelines pipelines, NancyContext context)

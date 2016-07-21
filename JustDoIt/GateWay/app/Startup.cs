@@ -16,7 +16,9 @@ namespace GateWay.app
                     IgnorePaths = new[]
                     {
                         "/",
-                        "/login"
+                        "/favicon.ico",
+                        "/login",
+                        "/admin"
                     }
                 });
 

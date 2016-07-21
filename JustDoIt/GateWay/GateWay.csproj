@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LiteDB, Version=1.0.4.0, Culture=neutral, PublicKeyToken=5c2fff750805920e, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiteDB.1.0.4\lib\net40\LiteDB.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.IdentityModel.Logging, Version=1.0.0.127, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.Logging.1.0.0\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
       <Private>True</Private>
@@ -99,7 +103,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="server\authentication\components\GateWayUser.cs" />
     <Compile Include="server\authentication\components\TokenValidator.cs" />
+    <Compile Include="server\authentication\interfaces\IAuthentificationService.cs" />
     <Compile Include="server\authentication\modules\LoginModule.cs" />
+    <Compile Include="server\authentication\interfaces\IUserRepository.cs" />
+    <Compile Include="server\authentication\repositories\UserRepository.cs" />
+    <Compile Include="server\authentication\services\AuthentificationService.cs" />
+    <Compile Include="server\db\components\DbContext.cs" />
+    <Compile Include="server\db\entities\UserEntity.cs" />
+    <Compile Include="server\db\interfaces\IDbContext.cs" />
+    <Compile Include="server\db\interfaces\IRepository.cs" />
     <Compile Include="server\IndexModule.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -114,10 +126,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="server\authentication\interfaces\" />
-    <Folder Include="server\authentication\services\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
