@@ -16,6 +16,9 @@ namespace GateWay.app
                     IgnorePaths = new[]
                     {
                         "/",
+                        "/fonts/*,*",
+                        "/scripts/*.js",
+                        "/content/*.*",
                         "/favicon.ico",
                         "/login",
                         "/admin"
