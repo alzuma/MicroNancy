@@ -1,4 +1,5 @@
-﻿using GateWay.server.authentication.components;
+﻿using System;
+using GateWay.server.authentication.components;
 using Owin;
 using Owin.StatelessAuth;
 
@@ -11,10 +12,17 @@ namespace GateWay.app
             var config = new AppConfig();
 
             app.RequiresStatelessAuth(new TokenValidator(config),
-                new StatelessAuthOptions
-                {
-                    IgnorePaths = new[]
-                    {
+                Options());
+
+            app.UseNancy();
+        }
+
+        private StatelessAuthOptions Options()
+        {
+            return new StatelessAuthOptions
+            {
+                IgnorePaths = new[]
+                                {
                         "/",
                         "/fonts/*,*",
                         "/scripts/*.js",
@@ -23,9 +31,7 @@ namespace GateWay.app
                         "/login",
                         "/admin"
                     }
-                });
-
-            app.UseNancy();
+            }           
         }
     }
 }
