@@ -7,8 +7,7 @@
     "target": "es5",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "module": "commonjs",
-    "outFile": "./pub/app/index.js"
+    "module": "commonjs"
   },
   "compileOnSave": true,
   "exclude": [
