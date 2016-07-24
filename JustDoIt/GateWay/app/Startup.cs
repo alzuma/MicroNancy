@@ -11,8 +11,8 @@ namespace GateWay.app
         {
             var config = new AppConfig();
 
-            app.RequiresStatelessAuth(new TokenValidator(config),
-                Options());
+          /*  app.RequiresStatelessAuth(new TokenValidator(config),
+                Options());*/
 
             app.UseNancy();
         }
@@ -24,14 +24,12 @@ namespace GateWay.app
                 IgnorePaths = new[]
                                 {
                         "/",
-                        "/fonts/*,*",
-                        "/scripts/*.js",
-                        "/content/*.*",
                         "/favicon.ico",
                         "/login",
-                        "/admin"
+                        "/admin",
+                        "/pub/**"
                     }
-            }           
+            };
         }
     }
 }

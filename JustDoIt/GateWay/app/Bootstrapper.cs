@@ -5,6 +5,7 @@ using Nancy.Bootstrapper;
 using Nancy.Owin;
 using Nancy.TinyIoc;
 using System.Security.Claims;
+using Nancy.Conventions;
 
 namespace GateWay.app
 {
@@ -34,6 +35,19 @@ namespace GateWay.app
             if (principal == null) return;
 
             context.CurrentUser = new GateWayUser(principal.Identity.Name, principal.Claims);
+        }
+
+        protected override void ConfigureConventions(NancyConventions nancyConventions)
+        {
+            base.ConfigureConventions(nancyConventions);
+
+            nancyConventions.StaticContentsConventions.Add(
+                StaticContentConventionBuilder.AddDirectory("lib", @"pub/lib")
+            );
+
+            nancyConventions.StaticContentsConventions.Add(
+                StaticContentConventionBuilder.AddDirectory("app", @"pub/app")
+            );
         }
     }
 }

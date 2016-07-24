@@ -3,8 +3,20 @@
 <head>
     <meta charset="utf-8" />
     <title>GateWay</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-Frame-Options" content="deny">
+
 </head>
 <body>
 	@Section['Content'];
+	<script src="lib/angular2/system.src.js"></script>
+	<script src="lib/angular2/angular2.dev.js"></script>
+	<script src="lib/angular2/rx.js"></script>
+	<script src="lib/angular2/Reflect.js"></script>
+	<script src="lib/angular2/zone.js"></script>
+	<script src="app/load.js"></script>
+	<script>
+      System.import('app/main').catch(function(err){ console.error(err); });
+    </script>
 </body>
 </html>
