@@ -2715,6 +2715,7 @@
     <None Include="tsconfig.json" />
     <None Include="typings.json" />
     <None Include="typings\globals\core-js\typings.json" />
+    <None Include="typings\globals\jasmine\typings.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="node_modules\%40angular\common\bundles\common.umd.js" />
@@ -6342,10 +6343,12 @@
     <TypeScriptCompile Include="node_modules\zone.js\lib\zone.ts" />
     <TypeScriptCompile Include="pub\app\app.component.ts" />
     <TypeScriptCompile Include="pub\app\app.routes.ts" />
+    <TypeScriptCompile Include="pub\app\authentication\login.service.ts" />
     <TypeScriptCompile Include="pub\app\home.component.ts" />
     <TypeScriptCompile Include="pub\app\login.component.ts" />
     <TypeScriptCompile Include="pub\app\main.ts" />
     <TypeScriptCompile Include="typings\globals\core-js\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\jasmine\index.d.ts" />
     <TypeScriptCompile Include="typings\index.d.ts" />
   </ItemGroup>
   <ItemGroup>

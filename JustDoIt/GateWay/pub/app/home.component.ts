@@ -2,8 +2,7 @@
 
 @Component({
     selector: 'home',
-    template: 'Home',
-    precompile: [HomeComponent]
+    template: 'Home'
 })
 export class HomeComponent {
 }

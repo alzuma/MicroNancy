@@ -7,7 +7,7 @@ namespace GateWay.server.authentication.modules
     {
         private readonly IAuthentificationService _authentificationService;
 
-        public LoginModule(IAuthentificationService authentificationService)
+        public LoginModule(IAuthentificationService authentificationService) : base("api/gateway")
         {
             _authentificationService = authentificationService;
 
