@@ -252,3 +252,4 @@ paket-files/
 *.sln.iml
 /JustDoIt/GateWay/pub/lib/angular2
 /JustDoIt/GateWay/typings
+/JustDoIt/GateWay/pub/lib
