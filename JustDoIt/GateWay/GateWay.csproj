@@ -4689,9 +4689,6 @@
     <Content Include="node_modules\zone.js\dist\zone-node.js" />
     <Content Include="node_modules\zone.js\dist\zone.js" />
     <Content Include="node_modules\zone.js\dist\zone.min.js" />
-    <Content Include="pub\app\app.component.js">
-      <DependentUpon>app.component.ts</DependentUpon>
-    </Content>
     <Content Include="pub\app\load.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
