@@ -253,3 +253,5 @@ paket-files/
 /JustDoIt/GateWay/pub/lib/angular2
 /JustDoIt/GateWay/typings
 /JustDoIt/GateWay/pub/lib
+/JustDoIt/GateWay/pub/app/*.map
+/JustDoIt/GateWay/pub/app/*.js

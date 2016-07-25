@@ -5,5 +5,4 @@
     template: 'empty'
 })
 export class LoginComponent {
-
 }

@@ -4689,7 +4689,7 @@
     <Content Include="node_modules\zone.js\dist\zone-node.js" />
     <Content Include="node_modules\zone.js\dist\zone.js" />
     <Content Include="node_modules\zone.js\dist\zone.min.js" />
-    <Content Include="pub\app\load.js">
+    <Content Include="pub\lib\load.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="pub\app\main.js">
@@ -6369,7 +6369,6 @@
     <Folder Include="node_modules\gulp\node_modules\gulp-util\node_modules\dateformat\node_modules\meow\node_modules\read-pkg-up\node_modules\read-pkg\node_modules\path-type\node_modules\pinkie-promise\node_modules\pinkie\" />
     <Folder Include="node_modules\gulp\node_modules\gulp-util\node_modules\dateformat\node_modules\meow\node_modules\redent\node_modules\indent-string\node_modules\repeating\node_modules\is-finite\node_modules\number-is-nan\" />
     <Folder Include="node_modules\gulp\node_modules\liftoff\node_modules\findup-sync\node_modules\micromatch\node_modules\braces\node_modules\expand-range\node_modules\fill-range\node_modules\isobject\node_modules\isarray\" />
-    <Folder Include="pub\lib\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
