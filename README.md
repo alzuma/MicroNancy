@@ -1,5 +1,5 @@
 # MicroNancy
-Micro service with Nancy
+Micro service with Nancy - work in progress
 
 The main goal here is to create self-host app powered with
 * angular2 https://angular.io
