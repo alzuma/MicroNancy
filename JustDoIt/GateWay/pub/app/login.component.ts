@@ -7,5 +7,7 @@ import { LoginService } from './authentication/login.service';
     providers: [LoginService]
 })
 export class LoginComponent {
-    constructor(private loginService: LoginService) { }
+    constructor(private loginService: LoginService) {
+       loginService.login();
+    }
 }
